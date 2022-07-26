@@ -1,20 +1,6 @@
 
 hướng dẫn chạy node : https://mirror.xyz/0x83857601C1cFA057F2576b343c563BDB9A4C9975/8HfjYCkbid2vlayxyPtSD9_wtb9a-wHb1uOENsAOwng
 
-154.12.229.177
-Alchemy : https://eth-goerli.alchemyapi.io/v2/HYhoVhVvVRtAaJjfoMzZNbXQNSOmnzDa
-          API KEY :  HYhoVhVvVRtAaJjfoMzZNbXQNSOmnzDa
-
-5.189.148.173
-Alchemy  : https://eth-goerli.alchemyapi.io/v2/yZsHuToNgx9q2tcAq1uaHQos-6hTbd3F
-           API key  : yZsHuToNgx9q2tcAq1uaHQos-6hTbd3F
-
-207.180.226.203
-https://mainnet.infura.io/v3/6df88587e5384fba988468e69fda4d63
-
-154.53.44.183
-https://mainnet.infura.io/v3/4ad5e13a0fd943c68839dc3ca60c231e
-
 1 - Check : python3 -V
 
 2 - Install pip :
@@ -97,77 +83,3 @@ check status node : systemctl status starknetd
 check version pathfinder : ~/pathfinder/target/release/pathfinder -V
 
 check block : https://voyager.online/
-
-hướng dẫn update pathfinder cho ae:
-1. Stop StarkNet: sudo systemctl stop starknetd (dành cho ai đã khai system service, không thì tự kill -9 ID_StarkNet )
-2. Chạy lệnh sau:
-cd ~/pathfinder && git fetch && git checkout v0.1.9-alpha
-3. Start lại StarNet: sudo systemctl start starknetd
-4. Check log(Ctrl+C để thoát): journalctl -u starknetd -f -o cat 
-5. Check version: ~/pathfinder/target/release/pathfinder -V
-=> kq sẽ là: Pathfinder 0.1.7-alpha
-
-guide update pathfinder , pip : 
-
-systemctl stop starknetd
-cd /root/pathfinder/
-git fetch
-git checkout v0.1.10-alpha
-cargo build --release --bin pathfinder
-cd py
-source .venv/bin/activate
-PIP_REQUIRE_VIRTUALENV=true pip install -r requirements-dev.txt
-/root/pathfinder/py/.venv/bin/python3 -m pip install --upgrade pip
-systemctl start starknetd 
-
-rustup update
-systemctl stop starknetd
-cd /root/pathfinder/
-git fetch
-git checkout v0.1.11-alpha
-cargo build --release --bin pathfinder
-cd py
-source .venv/bin/activate
-/root/pathfinder/py/.venv/bin/python3 -m pip install --upgrade pip
-PIP_REQUIRE_VIRTUALENV=true pip install -r requirements-dev.txt
-systemctl start starknetd 
-
-
-
-  #update 07/06/2022
-systemctl stop starknetd
-cd /root/pathfinder/
-git fetch
-git checkout v0.2.0-alpha
-cargo build --release --bin pathfinder
-cd py
-source .venv/bin/activate
-/root/pathfinder/py/.venv/bin/python3 -m pip install --upgrade pip
-PIP_REQUIRE_VIRTUALENV=true pip install -r requirements-dev.txt
-systemctl start starknetd 
-
-  #update 24/06/2022
-systemctl stop starknetd
-cd /root/pathfinder/
-git fetch
-git checkout v0.2.3-alpha 
-cargo build --release --bin pathfinder
-cd py
-source .venv/bin/activate
-/root/pathfinder/py/.venv/bin/python3 -m pip install --upgrade pip
-PIP_REQUIRE_VIRTUALENV=true pip install -r requirements-dev.txt
-systemctl start starknetd
-
- #update 06/07/2022
-systemctl stop starknetd
-cd /root/pathfinder/
-git fetch
-git checkout v0.2.4-alpha 
-cargo build --release --bin pathfinder
-cd py
-source .venv/bin/activate
-/root/pathfinder/py/.venv/bin/python3 -m pip install --upgrade pip
-PIP_REQUIRE_VIRTUALENV=true pip install -r requirements-dev.txt
-systemctl start starknetd
-
- #update 14/07/2022  : git checkout v0.2.5-alpha
